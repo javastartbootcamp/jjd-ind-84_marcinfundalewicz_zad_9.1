@@ -1,9 +1,9 @@
 package pl.javastart.task;
 
-public class FormaOpodatkowania {
+abstract class FormaOpodatkowania {
 
-    public double wyliczPodatek(double przychody) {
-        System.out.println("Metoda z wyliczaniem podatku nie została nadpisana");
-        return -1;
-    }
+    abstract double wyliczPodatek(double przychody, double wydatki);
+
+    abstract String podajNazwe();
+
 }
