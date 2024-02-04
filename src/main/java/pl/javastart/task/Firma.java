@@ -11,6 +11,8 @@ public class Firma {
     private double[] wydatki = new double[10];
     private int counterWydatki = 0;
 
+//co dokladnie daje nam stworzenie pola FormaOpodatkowania formaOpodatkowania w klasie Firma i przekazanie go do konstruktora
+
     public Firma(String nazwa, FormaOpodatkowania formaOpodatkowania) {
         this.nazwa = nazwa;
         this.formaOpodatkowania = formaOpodatkowania;
@@ -21,7 +23,7 @@ public class Firma {
         double sumaWydatkow = zsumujWydatki();
 
         System.out.printf("======= Firma: %s ===========\n", nazwa);
-        System.out.printf("Forma opodatkowania: %s\n", "TODO");
+        System.out.printf("Forma opodatkowania: %s\n", formaOpodatkowania.podajNazwe());
         System.out.printf("Suma przychodów: %.2f zł\n", zsumujPrzychody());
         System.out.printf("Suma wydatków: %.2f zł\n", zsumujWydatki());
         System.out.printf("Podatek do zapłacenia: %.2f zł", formaOpodatkowania.wyliczPodatek(sumaPrzychodow, sumaWydatkow));
@@ -48,6 +50,7 @@ public class Firma {
         if (counterPrzychody >= przychody.length) {
             przychody = Arrays.copyOf(przychody, przychody.length * 2);
         }
+
         przychody[counterPrzychody] = wartosc;
         counterPrzychody++;
 
